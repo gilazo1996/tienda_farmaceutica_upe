@@ -1,0 +1,6 @@
+D:\Roa\Documentos\TECNICAS25\5. Proyecto\repositorio oficial\tienda_farmaceutica_upe\DAL\bin\Debug\DAL.dll
+D:\Roa\Documentos\TECNICAS25\5. Proyecto\repositorio oficial\tienda_farmaceutica_upe\DAL\bin\Debug\DAL.pdb
+D:\Roa\Documentos\TECNICAS25\5. Proyecto\repositorio oficial\tienda_farmaceutica_upe\DAL\obj\Debug\DAL.csproj.AssemblyReference.cache
+D:\Roa\Documentos\TECNICAS25\5. Proyecto\repositorio oficial\tienda_farmaceutica_upe\DAL\obj\Debug\DAL.csproj.CoreCompileInputs.cache
+D:\Roa\Documentos\TECNICAS25\5. Proyecto\repositorio oficial\tienda_farmaceutica_upe\DAL\obj\Debug\DAL.dll
+D:\Roa\Documentos\TECNICAS25\5. Proyecto\repositorio oficial\tienda_farmaceutica_upe\DAL\obj\Debug\DAL.pdb

@@ -1,0 +1,14 @@
+D:\Roa\Documentos\TECNICAS25\5. Proyecto\repositorio oficial\tienda_farmaceutica_upe\UI\bin\Debug\UI.exe.config
+D:\Roa\Documentos\TECNICAS25\5. Proyecto\repositorio oficial\tienda_farmaceutica_upe\UI\bin\Debug\UI.exe
+D:\Roa\Documentos\TECNICAS25\5. Proyecto\repositorio oficial\tienda_farmaceutica_upe\UI\bin\Debug\UI.pdb
+D:\Roa\Documentos\TECNICAS25\5. Proyecto\repositorio oficial\tienda_farmaceutica_upe\UI\obj\Debug\UI.csproj.AssemblyReference.cache
+D:\Roa\Documentos\TECNICAS25\5. Proyecto\repositorio oficial\tienda_farmaceutica_upe\UI\obj\Debug\UI.Properties.Resources.resources
+D:\Roa\Documentos\TECNICAS25\5. Proyecto\repositorio oficial\tienda_farmaceutica_upe\UI\obj\Debug\UI.csproj.GenerateResource.cache
+D:\Roa\Documentos\TECNICAS25\5. Proyecto\repositorio oficial\tienda_farmaceutica_upe\UI\obj\Debug\UI.csproj.CoreCompileInputs.cache
+D:\Roa\Documentos\TECNICAS25\5. Proyecto\repositorio oficial\tienda_farmaceutica_upe\UI\obj\Debug\UI.exe
+D:\Roa\Documentos\TECNICAS25\5. Proyecto\repositorio oficial\tienda_farmaceutica_upe\UI\obj\Debug\UI.pdb
+D:\Roa\Documentos\TECNICAS25\5. Proyecto\repositorio oficial\tienda_farmaceutica_upe\UI\obj\Debug\UI.formInicio.resources
+D:\Roa\Documentos\TECNICAS25\5. Proyecto\repositorio oficial\tienda_farmaceutica_upe\UI\obj\Debug\UI.FormAdmin.resources
+D:\Roa\Documentos\TECNICAS25\5. Proyecto\repositorio oficial\tienda_farmaceutica_upe\UI\obj\Debug\UI.FormFarmaceu.resources
+D:\Roa\Documentos\TECNICAS25\5. Proyecto\repositorio oficial\tienda_farmaceutica_upe\UI\obj\Debug\UI.FormGerente.resources
+D:\Roa\Documentos\TECNICAS25\5. Proyecto\repositorio oficial\tienda_farmaceutica_upe\UI\obj\Debug\UI.FormVendedor.resources

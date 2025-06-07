@@ -1,0 +1,6 @@
+D:\Roa\Documentos\TECNICAS25\5. Proyecto\repositorio oficial\tienda_farmaceutica_upe\BE\bin\Debug\BE.dll
+D:\Roa\Documentos\TECNICAS25\5. Proyecto\repositorio oficial\tienda_farmaceutica_upe\BE\bin\Debug\BE.pdb
+D:\Roa\Documentos\TECNICAS25\5. Proyecto\repositorio oficial\tienda_farmaceutica_upe\BE\obj\Debug\BE.csproj.AssemblyReference.cache
+D:\Roa\Documentos\TECNICAS25\5. Proyecto\repositorio oficial\tienda_farmaceutica_upe\BE\obj\Debug\BE.csproj.CoreCompileInputs.cache
+D:\Roa\Documentos\TECNICAS25\5. Proyecto\repositorio oficial\tienda_farmaceutica_upe\BE\obj\Debug\BE.dll
+D:\Roa\Documentos\TECNICAS25\5. Proyecto\repositorio oficial\tienda_farmaceutica_upe\BE\obj\Debug\BE.pdb
