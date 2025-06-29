@@ -12,17 +12,17 @@ namespace DAL
 {
     public class Administrador
     {
-        public BE.Usuario BuscarUsuario(string nombreUsuario)
+        public BE.Usuario BuscarUsuario(string nombreUsuario)   //Funcion que recibe un nombre de Usuario a buscar y te devuelve un Usuario de capa BE
         {
             Conexion conexion = new Conexion();
-            BE.Usuario unUsuario = null;
+            BE.Usuario unUsuario = null;   //Se instancia un objeto de Usuario BE que se va a usar para llenarlo con datos, por eso esta en NULL
 
-            SqlParameter[] parametros = new SqlParameter[]
+            SqlParameter[] parametros = new SqlParameter[]   //Instanciamos un parametro de SQLParameter para usarlo en un Store Procedure
             {
                 new SqlParameter("@NombreUsuario", nombreUsuario)
             };
 
-            DataTable dt = conexion.LeerPorStoreProcedure("sp_buscar_usuario", parametros);
+            DataTable dt = conexion.LeerPorStoreProcedure("sp_buscar_usuario", parametros);   //Este DataTable va a guardar los datos que devuelva el Store Procedure
 
             foreach (DataRow row in dt.Rows) 
             {
@@ -47,9 +47,9 @@ namespace DAL
             return unUsuario;
         }
 
-        public List<BE.Usuario> ListarUsuarios()
+        public List<BE.Usuario> ListarUsuarios()   //Funcion que devuelve una lista de objetos Usuario de capa BE
         {
-            List<BE.Usuario> listaUsuarios = new List<BE.Usuario>();
+            List<BE.Usuario> listaUsuarios = new List<BE.Usuario>();   //Primeramente, se instancia una lista pero vacia
             Conexion conexion = new Conexion();
 
             DataTable dt = conexion.LeerPorStoreProcedure("sp_listar_usuarios");

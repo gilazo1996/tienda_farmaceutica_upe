@@ -45,6 +45,9 @@
             this.lblListaDeUsuarios = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.btnCancelarCambios = new System.Windows.Forms.Button();
+            this.btnConfirmarCambios = new System.Windows.Forms.Button();
+            this.btnAgregarUsuario = new System.Windows.Forms.Button();
             this.btnLimpiarCampos = new System.Windows.Forms.Button();
             this.btnCambiarRol = new System.Windows.Forms.Button();
             this.cboxRol = new System.Windows.Forms.ComboBox();
@@ -64,9 +67,6 @@
             this.lblApellido = new System.Windows.Forms.Label();
             this.lblNombre = new System.Windows.Forms.Label();
             this.btnEditarUsuario = new System.Windows.Forms.Button();
-            this.btnAgregarUsuario = new System.Windows.Forms.Button();
-            this.btnConfirmarCambios = new System.Windows.Forms.Button();
-            this.btnCancelarCambios = new System.Windows.Forms.Button();
             this.menuStrip1.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvUsuarios)).BeginInit();
@@ -82,7 +82,7 @@
             this.tstboxBienvenida});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(1456, 33);
+            this.menuStrip1.Size = new System.Drawing.Size(1370, 33);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -163,7 +163,7 @@
             this.lblBuscarNombreUsuario.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblBuscarNombreUsuario.Location = new System.Drawing.Point(17, 69);
             this.lblBuscarNombreUsuario.Name = "lblBuscarNombreUsuario";
-            this.lblBuscarNombreUsuario.Size = new System.Drawing.Size(122, 16);
+            this.lblBuscarNombreUsuario.Size = new System.Drawing.Size(123, 16);
             this.lblBuscarNombreUsuario.TabIndex = 4;
             this.lblBuscarNombreUsuario.Text = "Nombre de usuario";
             // 
@@ -268,6 +268,39 @@
             this.panel3.Size = new System.Drawing.Size(536, 336);
             this.panel3.TabIndex = 10;
             // 
+            // btnCancelarCambios
+            // 
+            this.btnCancelarCambios.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCancelarCambios.Location = new System.Drawing.Point(385, 287);
+            this.btnCancelarCambios.Name = "btnCancelarCambios";
+            this.btnCancelarCambios.Size = new System.Drawing.Size(131, 29);
+            this.btnCancelarCambios.TabIndex = 27;
+            this.btnCancelarCambios.Text = "Cancelar cambios";
+            this.btnCancelarCambios.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnCancelarCambios.UseVisualStyleBackColor = true;
+            this.btnCancelarCambios.Visible = false;
+            // 
+            // btnConfirmarCambios
+            // 
+            this.btnConfirmarCambios.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnConfirmarCambios.Location = new System.Drawing.Point(20, 287);
+            this.btnConfirmarCambios.Name = "btnConfirmarCambios";
+            this.btnConfirmarCambios.Size = new System.Drawing.Size(131, 29);
+            this.btnConfirmarCambios.TabIndex = 26;
+            this.btnConfirmarCambios.Text = "Confirmar cambios";
+            this.btnConfirmarCambios.UseVisualStyleBackColor = true;
+            this.btnConfirmarCambios.Visible = false;
+            // 
+            // btnAgregarUsuario
+            // 
+            this.btnAgregarUsuario.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAgregarUsuario.Location = new System.Drawing.Point(385, 43);
+            this.btnAgregarUsuario.Name = "btnAgregarUsuario";
+            this.btnAgregarUsuario.Size = new System.Drawing.Size(131, 29);
+            this.btnAgregarUsuario.TabIndex = 25;
+            this.btnAgregarUsuario.Text = "Agregar usuario";
+            this.btnAgregarUsuario.UseVisualStyleBackColor = true;
+            // 
             // btnLimpiarCampos
             // 
             this.btnLimpiarCampos.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -360,7 +393,7 @@
             this.lblRol.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblRol.Location = new System.Drawing.Point(17, 239);
             this.lblRol.Name = "lblRol";
-            this.lblRol.Size = new System.Drawing.Size(28, 16);
+            this.lblRol.Size = new System.Drawing.Size(29, 16);
             this.lblRol.TabIndex = 15;
             this.lblRol.Text = "Rol";
             // 
@@ -370,7 +403,7 @@
             this.lblEmail.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblEmail.Location = new System.Drawing.Point(17, 183);
             this.lblEmail.Name = "lblEmail";
-            this.lblEmail.Size = new System.Drawing.Size(41, 16);
+            this.lblEmail.Size = new System.Drawing.Size(42, 16);
             this.lblEmail.TabIndex = 14;
             this.lblEmail.Text = "Email";
             // 
@@ -380,7 +413,7 @@
             this.lblTeléfono.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTeléfono.Location = new System.Drawing.Point(17, 211);
             this.lblTeléfono.Name = "lblTeléfono";
-            this.lblTeléfono.Size = new System.Drawing.Size(61, 16);
+            this.lblTeléfono.Size = new System.Drawing.Size(62, 16);
             this.lblTeléfono.TabIndex = 13;
             this.lblTeléfono.Text = "Teléfono";
             // 
@@ -398,7 +431,7 @@
             this.lblCUIL.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblCUIL.Location = new System.Drawing.Point(17, 155);
             this.lblCUIL.Name = "lblCUIL";
-            this.lblCUIL.Size = new System.Drawing.Size(36, 16);
+            this.lblCUIL.Size = new System.Drawing.Size(37, 16);
             this.lblCUIL.TabIndex = 12;
             this.lblCUIL.Text = "CUIL";
             // 
@@ -408,7 +441,7 @@
             this.lblContraseña.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblContraseña.Location = new System.Drawing.Point(17, 127);
             this.lblContraseña.Name = "lblContraseña";
-            this.lblContraseña.Size = new System.Drawing.Size(76, 16);
+            this.lblContraseña.Size = new System.Drawing.Size(77, 16);
             this.lblContraseña.TabIndex = 11;
             this.lblContraseña.Text = "Contraseña";
             // 
@@ -418,7 +451,7 @@
             this.lblNombreUsuario.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblNombreUsuario.Location = new System.Drawing.Point(17, 99);
             this.lblNombreUsuario.Name = "lblNombreUsuario";
-            this.lblNombreUsuario.Size = new System.Drawing.Size(122, 16);
+            this.lblNombreUsuario.Size = new System.Drawing.Size(123, 16);
             this.lblNombreUsuario.TabIndex = 10;
             this.lblNombreUsuario.Text = "Nombre de usuario";
             // 
@@ -428,7 +461,7 @@
             this.lblApellido.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblApellido.Location = new System.Drawing.Point(17, 71);
             this.lblApellido.Name = "lblApellido";
-            this.lblApellido.Size = new System.Drawing.Size(57, 16);
+            this.lblApellido.Size = new System.Drawing.Size(58, 16);
             this.lblApellido.TabIndex = 9;
             this.lblApellido.Text = "Apellido";
             // 
@@ -438,7 +471,7 @@
             this.lblNombre.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblNombre.Location = new System.Drawing.Point(17, 43);
             this.lblNombre.Name = "lblNombre";
-            this.lblNombre.Size = new System.Drawing.Size(56, 16);
+            this.lblNombre.Size = new System.Drawing.Size(57, 16);
             this.lblNombre.TabIndex = 6;
             this.lblNombre.Text = "Nombre";
             // 
@@ -454,44 +487,11 @@
             this.btnEditarUsuario.Visible = false;
             this.btnEditarUsuario.Click += new System.EventHandler(this.btnEditarUsuario_Click);
             // 
-            // btnAgregarUsuario
-            // 
-            this.btnAgregarUsuario.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAgregarUsuario.Location = new System.Drawing.Point(385, 43);
-            this.btnAgregarUsuario.Name = "btnAgregarUsuario";
-            this.btnAgregarUsuario.Size = new System.Drawing.Size(131, 29);
-            this.btnAgregarUsuario.TabIndex = 25;
-            this.btnAgregarUsuario.Text = "Agregar usuario";
-            this.btnAgregarUsuario.UseVisualStyleBackColor = true;
-            // 
-            // btnConfirmarCambios
-            // 
-            this.btnConfirmarCambios.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnConfirmarCambios.Location = new System.Drawing.Point(20, 287);
-            this.btnConfirmarCambios.Name = "btnConfirmarCambios";
-            this.btnConfirmarCambios.Size = new System.Drawing.Size(131, 29);
-            this.btnConfirmarCambios.TabIndex = 26;
-            this.btnConfirmarCambios.Text = "Confirmar cambios";
-            this.btnConfirmarCambios.UseVisualStyleBackColor = true;
-            this.btnConfirmarCambios.Visible = false;
-            // 
-            // btnCancelarCambios
-            // 
-            this.btnCancelarCambios.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCancelarCambios.Location = new System.Drawing.Point(385, 287);
-            this.btnCancelarCambios.Name = "btnCancelarCambios";
-            this.btnCancelarCambios.Size = new System.Drawing.Size(131, 29);
-            this.btnCancelarCambios.TabIndex = 27;
-            this.btnCancelarCambios.Text = "Cancelar cambios";
-            this.btnCancelarCambios.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnCancelarCambios.UseVisualStyleBackColor = true;
-            this.btnCancelarCambios.Visible = false;
-            // 
             // FrmAdministrador
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1456, 544);
+            this.ClientSize = new System.Drawing.Size(1370, 544);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.menuStrip1);
             this.Controls.Add(this.panel1);

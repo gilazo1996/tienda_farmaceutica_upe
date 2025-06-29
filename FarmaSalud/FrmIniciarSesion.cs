@@ -22,7 +22,7 @@ namespace FarmaSalud
         {
             try
             {
-                string nombreUsuario = tboxUsuario.Text.Trim();
+                string nombreUsuario = tboxUsuario.Text.Trim();   //Desde los textbox se toman los valores de User y Pass y se quitan espacios extremos con Trim
                 string contraseña = tboxContraseña.Text.Trim();
 
                 if(nombreUsuario == "" || contraseña == "")
@@ -37,6 +37,12 @@ namespace FarmaSalud
                 {
                     FrmAdministrador frmAdministrador = new FrmAdministrador(BEUsuario);
                     frmAdministrador.Show();
+                    this.Hide();
+                }
+                if (BEUsuario.Rol == BE.Usuario.RolUsuario.Farmacéutico)
+                {
+                    FrmFarmaceutico frmFarmaceutico = new FrmFarmaceutico(BEUsuario);
+                    frmFarmaceutico.Show();
                     this.Hide();
                 }
             }

@@ -10,17 +10,17 @@ using System.Windows.Forms;
 
 namespace FarmaSalud
 {
-    public partial class FrmAdministrador : Form
+    public partial class FrmAdministrador : Form   //FORMULARIO ADMINISTRADOR
     {
-        private BE.Usuario admin = null;
-        private BLL.Administrador BLLAdmin = new BLL.Administrador();
+        private BE.Usuario admin = null;   //Una propiedad privada, un objeto Usuario de capa BE, se instancia con un NULL
+        private BLL.Administrador BLLAdmin = new BLL.Administrador();   //Una propiedad privada, se instancia un objeto Usuario Administrador de capa BLL 
 
-        public FrmAdministrador(BE.Usuario BEUsuario)
+        public FrmAdministrador(BE.Usuario BEUsuario)   //Se instancia un Form con parametro de un objeto Usuario de capa BE
         {
             InitializeComponent();
 
             admin = BEUsuario;
-            StringBuilder sb = new StringBuilder();
+            StringBuilder sb = new StringBuilder();   //Se realiza una instancia de campo string mutable
             sb.AppendLine($"¡Bienvenido/a {admin.Apellido} {admin.Nombre}!");
             tstboxBienvenida.Text = sb.ToString();
         }
