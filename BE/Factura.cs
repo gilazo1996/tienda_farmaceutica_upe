@@ -17,12 +17,12 @@ namespace BE
 			set { _nroFactura = value; }
 		}
 
-		private DateTime _fechaEmisión;
+		private DateTime _fechaEmision;
 
-		public DateTime FechaEmisión
+		public DateTime FechaEmision
 		{
-			get { return _fechaEmisión; }
-			set { _fechaEmisión = value; }
+			get { return _fechaEmision; }
+			set { _fechaEmision = value; }
 		}
 
 		private string _formaDePago;

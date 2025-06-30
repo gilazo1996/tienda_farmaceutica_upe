@@ -11,12 +11,20 @@ namespace BE
         public enum RolUsuario
         {
             Administrador = 1,
-            Farmacéutico = 2,
+            Farmaceutico = 2,
             Gerente = 3,
             Vendedor = 4
         }
 
-        private string _nombre;
+		private long _idUsuario;
+
+		public long IdUsuario
+		{
+			get { return _idUsuario; }
+			set { _idUsuario = value; }
+		}
+
+		private string _nombre;
 
         public string Nombre
         {
@@ -40,17 +48,17 @@ namespace BE
 			set { _nombreUsuario = value; }
 		}
 
-        private string _contraseña;
+        private string _contrasenia;
 
-        public string Contraseña
+        public string Contrasenia
         {
-            get { return _contraseña; }
-            set { _contraseña = value; }
+            get { return _contrasenia; }
+            set { _contrasenia = value; }
         }
 
         private string _cuil;
 
-		public string Cuil
+		public string CUIL
 		{
 			get { return _cuil; }
 			set { _cuil = value; }
@@ -64,12 +72,12 @@ namespace BE
 			set { _email = value; }
 		}
 
-		private string _teléfono;
+		private string _telefono;
 
-		public string Teléfono
+		public string Telefono
 		{
-			get { return _teléfono; }
-			set { _teléfono = value; }
+			get { return _telefono; }
+			set { _telefono = value; }
 		}
 
 		private RolUsuario _rol;

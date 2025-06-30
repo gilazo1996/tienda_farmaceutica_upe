@@ -22,16 +22,11 @@ namespace FarmaSalud
         {
             try
             {
-                string nombreUsuario = tboxUsuario.Text.Trim();
-                string contraseña = tboxContraseña.Text.Trim();
-
-                if(nombreUsuario == "" || contraseña == "")
-                {
-                    throw new Exception("Debe ingresar tanto el usuario como la contraseña.");
-                }
+                string nombreUsuario = tboxNombreUsuario.Text.Trim();
+                string contrasenia = tboxContraseña.Text.Trim();
 
                 BLL.Usuario BLLUsuario = new BLL.Usuario();
-                BE.Usuario BEUsuario = BLLUsuario.IniciarSesion(nombreUsuario, contraseña);
+                BE.Usuario BEUsuario = BLLUsuario.IniciarSesion(nombreUsuario, contrasenia);
 
                 if (BEUsuario.Rol == BE.Usuario.RolUsuario.Administrador)
                 {
@@ -42,36 +37,23 @@ namespace FarmaSalud
             }
             catch (Exception exc)
             {
-                MessageBox.Show(exc.Message);
+                MessageBox.Show(exc.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+        }
+
+        private void FrmIniciarSesion_Load(object sender, EventArgs e)
+        {
+            tboxNombreUsuario.Select();
+        }
+
+        private void btnSalir_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
 
         private void FrmIniciarSesion_FormClosed(object sender, FormClosedEventArgs e)
         {
             Application.Exit();
-        }
-
-        private void FrmIniciarSesion_Load(object sender, EventArgs e)
-        {
-            tboxUsuario.Select();
-        }
-
-        private void tboxUsuario_KeyDown(object sender, KeyEventArgs e)
-        {
-            DetectarEnter(e);
-        }
-
-        private void tboxContraseña_KeyDown(object sender, KeyEventArgs e)
-        {
-            DetectarEnter(e);
-        }
-
-        private void DetectarEnter(KeyEventArgs e)
-        {
-            if (e.KeyCode == Keys.Enter)
-            {
-                btnIniciarSesion.PerformClick();
-            }
         }
     }
 }

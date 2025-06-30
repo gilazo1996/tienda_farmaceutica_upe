@@ -18,7 +18,7 @@ namespace BE
 
         public Farmaceutico()
         {
-            this.Rol = RolUsuario.Farmacéutico;
+            this.Rol = RolUsuario.Farmaceutico;
         }
     }
 }

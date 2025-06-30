@@ -151,7 +151,7 @@ namespace DAL
                 objComando.CommandType = CommandType.Text;
                 objComando.Connection = this.objConexion;
 
-                //El método ExecuteNonQuery() me devuelve la cantidad de filas afectadas.
+                //El metodo ExecuteNonQuery() me devuelve la cantidad de filas afectadas.
                 filasAfectadas = objComando.ExecuteNonQuery();
 
 
@@ -192,7 +192,7 @@ namespace DAL
                 if (pParametrosSql.Length > 0)
                 {
                     objComando.Parameters.AddRange(pParametrosSql);
-                    //El método ExecuteNonQuery() me devuelve la cantidad de filas afectadas.
+                    //El metodo ExecuteNonQuery() me devuelve la cantidad de filas afectadas.
                     filasAfectadas = objComando.ExecuteNonQuery();
                 }
                 else
@@ -200,8 +200,6 @@ namespace DAL
                     //retorno -1 porque la lista de parametros Sql tiene 0 ítems...
                     filasAfectadas = -1;
                 }
-
-
 
             }
             catch (Exception)
