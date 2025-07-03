@@ -18,7 +18,7 @@ namespace UI
         public formInicio()
         {
             InitializeComponent();
-            
+            tboxIngresePass.PasswordChar = '●';
         }
 
         private void formInicio_Load(object sender, EventArgs e)

@@ -30,6 +30,12 @@ namespace UI
             InitializeComponent();
             AgregarColumnaEliminar();
             dgvFarmacos.CellContentClick += dgvFarmacos_CellContentClick;
+            
+            // Hacer los campos del fármaco no editables
+            txtCodigoProductoEncontrado.ReadOnly = true;
+            txtNombreProductoEncontrado.ReadOnly = true;
+            txtPrecioProductoEncontrado.ReadOnly = true;
+            txtStock.ReadOnly = true;
         }
         private void AgregarColumnaEliminar()
         {
@@ -194,6 +200,13 @@ namespace UI
             {
                 MessageBox.Show("Ocurrió un error inesperado:\n" + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+        }
+
+        private void btnCancelarVenta_Click(object sender, EventArgs e)
+        {
+            this.Close();
+            FormVendedor menuVendedor = new FormVendedor();
+            menuVendedor.Show();
         }
     }
 }
