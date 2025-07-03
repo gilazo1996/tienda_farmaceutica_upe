@@ -9,11 +9,11 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 
 
-namespace UI
+namespace FarmaSalud
 {
-    public partial class FormVendedor : Form
+    public partial class FrmVendedor : Form
     {
-        public FormVendedor()
+        public FrmVendedor(BE.Usuario BEVendedor)
         {
             InitializeComponent();
         }
@@ -27,9 +27,14 @@ namespace UI
         private void btnSalir_Click(object sender, EventArgs e)
         {
             this.Hide();
-            formInicio login = new formInicio();
-            login.Show();
+            FrmIniciarSesion frmIniciarSesion = new FrmIniciarSesion();
+            frmIniciarSesion.Show();
             this.Close(); 
+        }
+
+        private void FrmVendedor_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -3,11 +3,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.Configuration;
 
-namespace UI
+namespace FarmaSalud
 {
-    static class Program
+    internal static class Program
     {
         /// <summary>
         /// Punto de entrada principal para la aplicación.
@@ -15,14 +14,9 @@ namespace UI
         [STAThread]
         static void Main()
         {
-            var connStr = ConfigurationManager.ConnectionStrings["FarmaceuticaDB"]?.ConnectionString;
-            Console.WriteLine("Cadena de conexión: " + (connStr ?? "NULL"));
-
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new formInicio());
+            Application.Run(new FrmIniciarSesion());
         }
     }
 }
-    
-

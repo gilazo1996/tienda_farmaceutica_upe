@@ -4,12 +4,12 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{EF8473DB-B657-47F4-9EE9-6828711EEDCC}</ProjectGuid>
+    <ProjectGuid>{34A25C8C-AE62-44E3-9AC1-21533569ED83}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>BE</RootNamespace>
     <AssemblyName>BE</AssemblyName>
-    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <Deterministic>true</Deterministic>
   </PropertyGroup>
@@ -41,8 +41,20 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Administrador.cs" />
+    <Compile Include="DetalleFactura.cs" />
+    <Compile Include="DetalleReporte.cs" />
+    <Compile Include="DetalleSolicitudVenta.cs" />
+    <Compile Include="Factura.cs" />
+    <Compile Include="Farmaceutico.cs" />
     <Compile Include="Farmaco.cs" />
+    <Compile Include="Gerente.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Proveedor.cs" />
+    <Compile Include="Reporte.cs" />
+    <Compile Include="SolicitudVenta.cs" />
+    <Compile Include="Usuario.cs" />
+    <Compile Include="Vendedor.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -8,14 +8,15 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-
-namespace UI.Properties
+namespace FarmaSalud.Properties
 {
+
+
     /// <summary>
     ///   Clase de recurso fuertemente tipado para buscar cadenas traducidas, etc.
     /// </summary>
     // StronglyTypedResourceBuilder generó automáticamente esta clase
-    // a través de una herramienta como ResGen o Visual Studio.
+    // a traves de una herramienta como ResGen o Visual Studio.
     // Para agregar o quitar un miembro, edite el archivo .ResX y, a continuación, vuelva a ejecutar ResGen
     // con la opción /str o recompile su proyecto de VS.
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "4.0.0.0")]
@@ -34,7 +35,7 @@ namespace UI.Properties
         }
 
         /// <summary>
-        ///   Devuelve la instancia ResourceManager almacenada en caché utilizada por esta clase.
+        ///   Devuelve la instancia ResourceManager almacenada en cache utilizada por esta clase.
         /// </summary>
         [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Advanced)]
         internal static global::System.Resources.ResourceManager ResourceManager
@@ -43,7 +44,7 @@ namespace UI.Properties
             {
                 if ((resourceMan == null))
                 {
-                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("UI.Properties.Resources", typeof(Resources).Assembly);
+                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("FarmaSalud.Properties.Resources", typeof(Resources).Assembly);
                     resourceMan = temp;
                 }
                 return resourceMan;
