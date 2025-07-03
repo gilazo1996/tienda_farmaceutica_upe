@@ -31,10 +31,13 @@
             this.txtCodigoFarmaco = new System.Windows.Forms.TextBox();
             this.btnBuscarFarmaco = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
             this.btnAgregarFarmaco = new System.Windows.Forms.Button();
             this.dgvFarmacos = new System.Windows.Forms.DataGridView();
+            this.Codigo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Cantidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.PrecioUnitario = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Subtotal = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnConfirmarVenta = new System.Windows.Forms.Button();
             this.btnCancelarVenta = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
@@ -47,14 +50,8 @@
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.nudCantidadProductoEncontrado = new System.Windows.Forms.NumericUpDown();
-            this.Codigo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Cantidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.PrecioUnitario = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Subtotal = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.txtStock = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvFarmacos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudCantidadProductoEncontrado)).BeginInit();
             this.SuspendLayout();
@@ -68,7 +65,7 @@
             // 
             // btnBuscarFarmaco
             // 
-            this.btnBuscarFarmaco.Location = new System.Drawing.Point(54, 126);
+            this.btnBuscarFarmaco.Location = new System.Drawing.Point(54, 87);
             this.btnBuscarFarmaco.Name = "btnBuscarFarmaco";
             this.btnBuscarFarmaco.Size = new System.Drawing.Size(100, 23);
             this.btnBuscarFarmaco.TabIndex = 1;
@@ -85,22 +82,6 @@
             this.label1.TabIndex = 2;
             this.label1.Text = "Código del fármaco:";
             this.label1.Click += new System.EventHandler(this.label1_Click);
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(51, 84);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(52, 13);
-            this.label2.TabIndex = 3;
-            this.label2.Text = "Cantidad:";
-            // 
-            // numericUpDown1
-            // 
-            this.numericUpDown1.Location = new System.Drawing.Point(54, 100);
-            this.numericUpDown1.Name = "numericUpDown1";
-            this.numericUpDown1.Size = new System.Drawing.Size(52, 20);
-            this.numericUpDown1.TabIndex = 4;
             // 
             // btnAgregarFarmaco
             // 
@@ -129,6 +110,31 @@
             this.dgvFarmacos.TabIndex = 6;
             this.dgvFarmacos.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvFarmacos_CellContentClick);
             // 
+            // Codigo
+            // 
+            this.Codigo.HeaderText = "Codigo";
+            this.Codigo.Name = "Codigo";
+            // 
+            // Nombre
+            // 
+            this.Nombre.HeaderText = "Nombre";
+            this.Nombre.Name = "Nombre";
+            // 
+            // Cantidad
+            // 
+            this.Cantidad.HeaderText = "Cantidad";
+            this.Cantidad.Name = "Cantidad";
+            // 
+            // PrecioUnitario
+            // 
+            this.PrecioUnitario.HeaderText = "PrecioUnitario";
+            this.PrecioUnitario.Name = "PrecioUnitario";
+            // 
+            // Subtotal
+            // 
+            this.Subtotal.HeaderText = "Subtotal";
+            this.Subtotal.Name = "Subtotal";
+            // 
             // btnConfirmarVenta
             // 
             this.btnConfirmarVenta.Location = new System.Drawing.Point(392, 397);
@@ -147,6 +153,7 @@
             this.btnCancelarVenta.TabIndex = 8;
             this.btnCancelarVenta.Text = "Cancelar";
             this.btnCancelarVenta.UseVisualStyleBackColor = true;
+            this.btnCancelarVenta.Click += new System.EventHandler(this.btnCancelarVenta_Click);
             // 
             // label3
             // 
@@ -221,7 +228,7 @@
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(40, 314);
+            this.label8.Location = new System.Drawing.Point(40, 341);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(48, 13);
             this.label8.TabIndex = 18;
@@ -229,39 +236,14 @@
             // 
             // nudCantidadProductoEncontrado
             // 
-            this.nudCantidadProductoEncontrado.Location = new System.Drawing.Point(96, 311);
+            this.nudCantidadProductoEncontrado.Location = new System.Drawing.Point(96, 339);
             this.nudCantidadProductoEncontrado.Name = "nudCantidadProductoEncontrado";
-            this.nudCantidadProductoEncontrado.Size = new System.Drawing.Size(120, 20);
+            this.nudCantidadProductoEncontrado.Size = new System.Drawing.Size(67, 20);
             this.nudCantidadProductoEncontrado.TabIndex = 19;
-            // 
-            // Codigo
-            // 
-            this.Codigo.HeaderText = "Codigo";
-            this.Codigo.Name = "Codigo";
-            // 
-            // Nombre
-            // 
-            this.Nombre.HeaderText = "Nombre";
-            this.Nombre.Name = "Nombre";
-            // 
-            // Cantidad
-            // 
-            this.Cantidad.HeaderText = "Cantidad";
-            this.Cantidad.Name = "Cantidad";
-            // 
-            // PrecioUnitario
-            // 
-            this.PrecioUnitario.HeaderText = "PrecioUnitario";
-            this.PrecioUnitario.Name = "PrecioUnitario";
-            // 
-            // Subtotal
-            // 
-            this.Subtotal.HeaderText = "Subtotal";
-            this.Subtotal.Name = "Subtotal";
             // 
             // txtStock
             // 
-            this.txtStock.Location = new System.Drawing.Point(96, 337);
+            this.txtStock.Location = new System.Drawing.Point(96, 313);
             this.txtStock.Name = "txtStock";
             this.txtStock.Size = new System.Drawing.Size(100, 20);
             this.txtStock.TabIndex = 20;
@@ -270,7 +252,7 @@
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(43, 343);
+            this.label9.Location = new System.Drawing.Point(40, 316);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(35, 13);
             this.label9.TabIndex = 21;
@@ -297,15 +279,12 @@
             this.Controls.Add(this.btnConfirmarVenta);
             this.Controls.Add(this.dgvFarmacos);
             this.Controls.Add(this.btnAgregarFarmaco);
-            this.Controls.Add(this.numericUpDown1);
-            this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btnBuscarFarmaco);
             this.Controls.Add(this.txtCodigoFarmaco);
             this.Name = "FormGenerarVenta";
             this.Text = "FormGenerarVenta";
             this.Load += new System.EventHandler(this.FormGenerarVenta_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvFarmacos)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudCantidadProductoEncontrado)).EndInit();
             this.ResumeLayout(false);
@@ -318,8 +297,6 @@
         private System.Windows.Forms.TextBox txtCodigoFarmaco;
         private System.Windows.Forms.Button btnBuscarFarmaco;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.NumericUpDown numericUpDown1;
         private System.Windows.Forms.Button btnAgregarFarmaco;
         private System.Windows.Forms.DataGridView dgvFarmacos;
         private System.Windows.Forms.Button btnConfirmarVenta;
