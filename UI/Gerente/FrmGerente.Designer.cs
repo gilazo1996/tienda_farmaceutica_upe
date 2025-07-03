@@ -1,4 +1,4 @@
-﻿namespace FarmaSalud.Gerente
+﻿namespace FarmaSalud
 {
     partial class FrmGerente
     {

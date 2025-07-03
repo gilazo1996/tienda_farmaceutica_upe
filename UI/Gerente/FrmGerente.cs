@@ -9,7 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace FarmaSalud.Gerente
+namespace FarmaSalud
 {
     public partial class FrmGerente : Form
     {
