@@ -29,11 +29,11 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmGerente));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             this.msMenuPrincipal = new System.Windows.Forms.MenuStrip();
             this.gestionarVentasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiVisualizarVentas = new System.Windows.Forms.ToolStripMenuItem();
@@ -43,7 +43,7 @@
             this.buscarVendedorToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.visualizarVendedoresToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiSesion = new System.Windows.Forms.ToolStripMenuItem();
-            this.tsmiVerMiPerfil = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmiMiPerfil = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiCerrarSesion = new System.Windows.Forms.ToolStripMenuItem();
             this.pnlBienvenida = new System.Windows.Forms.Panel();
             this.lblBienvenida = new System.Windows.Forms.Label();
@@ -63,6 +63,8 @@
             this.lblVisualizarSolicitudes = new System.Windows.Forms.Label();
             this.dgvDetalleSolicitud = new System.Windows.Forms.DataGridView();
             this.pnlGenerarReporte = new System.Windows.Forms.Panel();
+            this.tboxDescripcionReporte = new System.Windows.Forms.TextBox();
+            this.lblDescripcionReporte = new System.Windows.Forms.Label();
             this.btnCancelar = new System.Windows.Forms.Button();
             this.dtpFechaFin = new System.Windows.Forms.DateTimePicker();
             this.dtpFechaInicio = new System.Windows.Forms.DateTimePicker();
@@ -156,17 +158,17 @@
             // 
             this.tsmiSesion.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
             this.tsmiSesion.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.tsmiVerMiPerfil,
+            this.tsmiMiPerfil,
             this.tsmiCerrarSesion});
             this.tsmiSesion.Name = "tsmiSesion";
             this.tsmiSesion.Size = new System.Drawing.Size(58, 21);
             this.tsmiSesion.Text = "Sesión";
             // 
-            // tsmiVerMiPerfil
+            // tsmiMiPerfil
             // 
-            this.tsmiVerMiPerfil.Name = "tsmiVerMiPerfil";
-            this.tsmiVerMiPerfil.Size = new System.Drawing.Size(154, 22);
-            this.tsmiVerMiPerfil.Text = "Ver mi perfil";
+            this.tsmiMiPerfil.Name = "tsmiMiPerfil";
+            this.tsmiMiPerfil.Size = new System.Drawing.Size(154, 22);
+            this.tsmiMiPerfil.Text = "Mi perfil";
             // 
             // tsmiCerrarSesion
             // 
@@ -250,14 +252,14 @@
             this.dgvFacturas.MultiSelect = false;
             this.dgvFacturas.Name = "dgvFacturas";
             this.dgvFacturas.ReadOnly = true;
-            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle11.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle11.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle11.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle11.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle11.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvFacturas.RowHeadersDefaultCellStyle = dataGridViewCellStyle11;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvFacturas.RowHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvFacturas.RowHeadersWidth = 45;
             this.dgvFacturas.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvFacturas.Size = new System.Drawing.Size(930, 241);
@@ -311,14 +313,14 @@
             this.dgvDetalleFactura.MultiSelect = false;
             this.dgvDetalleFactura.Name = "dgvDetalleFactura";
             this.dgvDetalleFactura.ReadOnly = true;
-            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle12.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle12.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle12.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle12.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle12.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle12.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvDetalleFactura.RowHeadersDefaultCellStyle = dataGridViewCellStyle12;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvDetalleFactura.RowHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.dgvDetalleFactura.RowHeadersWidth = 45;
             this.dgvDetalleFactura.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvDetalleFactura.Size = new System.Drawing.Size(930, 148);
@@ -375,14 +377,14 @@
             this.dgvSolicitudes.MultiSelect = false;
             this.dgvSolicitudes.Name = "dgvSolicitudes";
             this.dgvSolicitudes.ReadOnly = true;
-            dataGridViewCellStyle13.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle13.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle13.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle13.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle13.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle13.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle13.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvSolicitudes.RowHeadersDefaultCellStyle = dataGridViewCellStyle13;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvSolicitudes.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.dgvSolicitudes.RowHeadersWidth = 45;
             this.dgvSolicitudes.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvSolicitudes.Size = new System.Drawing.Size(930, 241);
@@ -425,14 +427,14 @@
             this.dgvDetalleSolicitud.MultiSelect = false;
             this.dgvDetalleSolicitud.Name = "dgvDetalleSolicitud";
             this.dgvDetalleSolicitud.ReadOnly = true;
-            dataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle14.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle14.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle14.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle14.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle14.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle14.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvDetalleSolicitud.RowHeadersDefaultCellStyle = dataGridViewCellStyle14;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvDetalleSolicitud.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
             this.dgvDetalleSolicitud.RowHeadersWidth = 45;
             this.dgvDetalleSolicitud.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvDetalleSolicitud.Size = new System.Drawing.Size(930, 145);
@@ -443,6 +445,8 @@
             this.pnlGenerarReporte.AutoSize = true;
             this.pnlGenerarReporte.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.pnlGenerarReporte.BackColor = System.Drawing.SystemColors.HighlightText;
+            this.pnlGenerarReporte.Controls.Add(this.tboxDescripcionReporte);
+            this.pnlGenerarReporte.Controls.Add(this.lblDescripcionReporte);
             this.pnlGenerarReporte.Controls.Add(this.btnCancelar);
             this.pnlGenerarReporte.Controls.Add(this.dtpFechaFin);
             this.pnlGenerarReporte.Controls.Add(this.dtpFechaInicio);
@@ -455,20 +459,41 @@
             this.pnlGenerarReporte.Controls.Add(this.dgvFacturasEncontradas);
             this.pnlGenerarReporte.Location = new System.Drawing.Point(0, 0);
             this.pnlGenerarReporte.Name = "pnlGenerarReporte";
-            this.pnlGenerarReporte.Size = new System.Drawing.Size(566, 424);
+            this.pnlGenerarReporte.Size = new System.Drawing.Size(566, 501);
             this.pnlGenerarReporte.TabIndex = 5;
             this.pnlGenerarReporte.Visible = false;
+            // 
+            // tboxDescripcionReporte
+            // 
+            this.tboxDescripcionReporte.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tboxDescripcionReporte.Location = new System.Drawing.Point(177, 416);
+            this.tboxDescripcionReporte.Name = "tboxDescripcionReporte";
+            this.tboxDescripcionReporte.Size = new System.Drawing.Size(386, 22);
+            this.tboxDescripcionReporte.TabIndex = 68;
+            this.tboxDescripcionReporte.Visible = false;
+            // 
+            // lblDescripcionReporte
+            // 
+            this.lblDescripcionReporte.AutoSize = true;
+            this.lblDescripcionReporte.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDescripcionReporte.Location = new System.Drawing.Point(24, 419);
+            this.lblDescripcionReporte.Name = "lblDescripcionReporte";
+            this.lblDescripcionReporte.Size = new System.Drawing.Size(147, 16);
+            this.lblDescripcionReporte.TabIndex = 67;
+            this.lblDescripcionReporte.Text = "Descripción del reporte";
+            this.lblDescripcionReporte.Visible = false;
             // 
             // btnCancelar
             // 
             this.btnCancelar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCancelar.Location = new System.Drawing.Point(12, 389);
+            this.btnCancelar.Location = new System.Drawing.Point(12, 469);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(131, 29);
             this.btnCancelar.TabIndex = 66;
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.UseVisualStyleBackColor = true;
             this.btnCancelar.Visible = false;
+            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
             // dtpFechaFin
             // 
@@ -478,6 +503,7 @@
             this.dtpFechaFin.Name = "dtpFechaFin";
             this.dtpFechaFin.Size = new System.Drawing.Size(257, 22);
             this.dtpFechaFin.TabIndex = 65;
+            this.dtpFechaFin.Value = new System.DateTime(2025, 7, 3, 0, 0, 0, 0);
             // 
             // dtpFechaInicio
             // 
@@ -486,17 +512,19 @@
             this.dtpFechaInicio.Name = "dtpFechaInicio";
             this.dtpFechaInicio.Size = new System.Drawing.Size(257, 22);
             this.dtpFechaInicio.TabIndex = 64;
+            this.dtpFechaInicio.Value = new System.DateTime(2025, 7, 3, 0, 0, 0, 0);
             // 
             // btnGenerarReporte
             // 
             this.btnGenerarReporte.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnGenerarReporte.Location = new System.Drawing.Point(432, 392);
+            this.btnGenerarReporte.Location = new System.Drawing.Point(432, 469);
             this.btnGenerarReporte.Name = "btnGenerarReporte";
             this.btnGenerarReporte.Size = new System.Drawing.Size(131, 29);
             this.btnGenerarReporte.TabIndex = 63;
             this.btnGenerarReporte.Text = "Generar reporte";
             this.btnGenerarReporte.UseVisualStyleBackColor = true;
             this.btnGenerarReporte.Visible = false;
+            this.btnGenerarReporte.Click += new System.EventHandler(this.btnGenerarReporte_Click);
             // 
             // btnBuscarFacturas
             // 
@@ -566,14 +594,14 @@
             this.dgvFacturasEncontradas.MultiSelect = false;
             this.dgvFacturasEncontradas.Name = "dgvFacturasEncontradas";
             this.dgvFacturasEncontradas.ReadOnly = true;
-            dataGridViewCellStyle15.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle15.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle15.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle15.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle15.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle15.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle15.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvFacturasEncontradas.RowHeadersDefaultCellStyle = dataGridViewCellStyle15;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvFacturasEncontradas.RowHeadersDefaultCellStyle = dataGridViewCellStyle5;
             this.dgvFacturasEncontradas.RowHeadersWidth = 45;
             this.dgvFacturasEncontradas.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvFacturasEncontradas.Size = new System.Drawing.Size(551, 145);
@@ -633,7 +661,7 @@
         private System.Windows.Forms.ToolStripMenuItem buscarVendedorToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem visualizarVendedoresToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem tsmiSesion;
-        private System.Windows.Forms.ToolStripMenuItem tsmiVerMiPerfil;
+        private System.Windows.Forms.ToolStripMenuItem tsmiMiPerfil;
         private System.Windows.Forms.ToolStripMenuItem tsmiCerrarSesion;
         private System.Windows.Forms.Panel pnlBienvenida;
         private System.Windows.Forms.Label lblBienvenida;
@@ -663,5 +691,7 @@
         private System.Windows.Forms.DateTimePicker dtpFechaFin;
         private System.Windows.Forms.DateTimePicker dtpFechaInicio;
         private System.Windows.Forms.Button btnCancelar;
+        private System.Windows.Forms.Label lblDescripcionReporte;
+        private System.Windows.Forms.TextBox tboxDescripcionReporte;
     }
 }

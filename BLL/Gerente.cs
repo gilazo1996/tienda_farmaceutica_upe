@@ -1,4 +1,5 @@
 ﻿using BE;
+using DAL;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -72,6 +73,22 @@ namespace BLL
                 throw new Exception("No se encontraron facturas en el rango de fechas indicado.");
 
             return listaFacturas;
+        }
+
+        public bool GenerarReporte(long idGerente, string descripcion, DateTime fechaInicio, DateTime fechaFin)
+        {
+            if (fechaInicio > fechaFin)
+                throw new Exception("La fecha de inicio no puede ser mayor a la fecha de fin.");
+
+            if(descripcion == "")
+                throw new Exception("Debe completar la descripción del reporte que desea generar.");
+
+            int insertado = DALGerente.GenerarReporte(idGerente, descripcion, fechaInicio, fechaFin);
+
+            if (insertado <= 0)
+                throw new Exception("Se produjo un error al generar el reporte de ventas.");
+
+            return true;
         }
     }
 }
