@@ -131,6 +131,23 @@ namespace DAL
             return listaFacturas;
         }
 
+        public int GenerarReporte(long idGerente, string descripcion, DateTime fechaInicio, DateTime fechaFin)
+        {
+            DAL.Conexion conexion = new DAL.Conexion();
+
+            SqlParameter[] parametros = new SqlParameter[]
+            {
+                conexion.crearParametro("@idUsuario", idGerente),
+                conexion.crearParametro("@Descripcion", descripcion),
+                conexion.crearParametro("@FechaInicio", fechaInicio),
+                conexion.crearParametro("@FechaFin", fechaFin)
+            };
+
+            int insertado = conexion.EscribirPorStoreProcedure("sp_Generar_Reporte", parametros);
+
+            return insertado;
+        }
+
         private DetalleSolicitudVenta MapearDetalleSolicitud(DataRow row)
         {
             BE.DetalleSolicitudVenta detalle = new BE.DetalleSolicitudVenta();

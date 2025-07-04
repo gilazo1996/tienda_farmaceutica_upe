@@ -9,12 +9,17 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace FarmaSalud.Gerente
+namespace FarmaSalud
 {
     public partial class FrmGerente : Form
     {
         private BE.Usuario gerente;
         private BLL.Gerente BLLGerente = new BLL.Gerente();
+        private List<BE.Factura> listaFacturas = new List<BE.Factura>();
+        private StringBuilder texto = new StringBuilder();
+        private StringBuilder titulo = new StringBuilder();
+        private StringBuilder exito = new StringBuilder();
+        private StringBuilder error = new StringBuilder();
 
         public FrmGerente(BE.Usuario BEUsuario)
         {
@@ -35,6 +40,7 @@ namespace FarmaSalud.Gerente
         {
             pnlBienvenida.Visible = false;
             pnlVisualizarSolicitudes.Visible = false;
+            pnlGenerarReporte.Visible = false;
             pnlVisualizarVentas.Visible = true;
 
             try
@@ -111,6 +117,9 @@ namespace FarmaSalud.Gerente
 
                 lblFacturasEncontradas.Visible = true;
                 dgvFacturasEncontradas.Visible = true;
+                lblDescripcionReporte.Visible = true;
+                tboxDescripcionReporte.Visible = true;
+                btnGenerarReporte.Visible = true;
                 btnGenerarReporte.Visible = true;
                 btnCancelar.Visible = true;
             }
@@ -172,6 +181,7 @@ namespace FarmaSalud.Gerente
         {
             pnlBienvenida.Visible = false;
             pnlVisualizarVentas.Visible = false;
+            pnlGenerarReporte.Visible = false;
             pnlVisualizarSolicitudes.Visible = true;
 
             try
@@ -275,25 +285,103 @@ namespace FarmaSalud.Gerente
         {
             try
             {
-                List<BE.Factura> listaFacturas = new List<BE.Factura>();
-                DateTime fechaInicio = dtpFechaInicio.Value;
-                DateTime fechaFin = dtpFechaFin.Value;
+                List<BE.Factura> listaFacturasEncontradas = new List<BE.Factura>();
+                DateTime fechaInicio = dtpFechaInicio.Value.Date;
+                DateTime fechaFin = dtpFechaFin.Value.Date;
 
-                listaFacturas = BLLGerente.BuscarFacturasPorFecha(fechaInicio, fechaFin);
+                listaFacturasEncontradas = BLLGerente.BuscarFacturasPorFecha(fechaInicio, fechaFin);
 
-                cargarFacturas(listaFacturas);
+                listaFacturas = listaFacturasEncontradas; 
+
+                cargarFacturas(listaFacturasEncontradas);
             }
             catch (Exception exc)
             {
                 MessageBox.Show(exc.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-
-                lblFacturasEncontradas.Visible = false;
-                dgvFacturasEncontradas.Visible = false;
-                btnGenerarReporte.Visible = false;
-                btnCancelar.Visible = false;
-                dgvFacturasEncontradas.Columns.Clear();
-                dgvFacturasEncontradas.Rows.Clear();
+                ResetearPanelGenerarReporte();
             }
+        }
+
+        private void btnGenerarReporte_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                texto.Clear();
+                titulo.Clear();
+                exito.Clear();
+                error.Clear();
+                texto.Append("¿Desea confirmar la generación del reporte?");
+                titulo.Append("Generar reporte");
+                exito.Append("Reporte generado exitosamente.");
+                error.Append("Se produjo un error al generar el reporte.");
+
+                string descripcion = tboxDescripcionReporte.Text.Trim(); ;
+                DateTime fechaInicio = dtpFechaInicio.Value.Date;
+                DateTime fechaFin = dtpFechaFin.Value.Date;
+
+                DialogResult resultado = MessageBox.Show(
+                    texto.ToString(),
+                    titulo.ToString(),
+                    MessageBoxButtons.YesNo,
+                    MessageBoxIcon.Warning
+                );
+
+                if(DialogResult.Yes == resultado)
+                {
+                    if(BLLGerente.GenerarReporte(gerente.IdUsuario, descripcion, fechaInicio, fechaFin))
+                        MessageBox.Show(exito.ToString(), "Exito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    else
+                        MessageBox.Show(error.ToString(), "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+                    ResetearPanelGenerarReporte();
+                }
+            }
+            catch (Exception exc)
+            {
+                MessageBox.Show(exc.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                ResetearPanelGenerarReporte();
+            }
+        }
+
+        private void ResetearPanelGenerarReporte()
+        {
+            lblFacturasEncontradas.Visible = false;
+            dgvFacturasEncontradas.Visible = false;
+            lblDescripcionReporte.Visible = false;
+            tboxDescripcionReporte.Visible = false;
+            tboxDescripcionReporte.Text = "";
+            btnGenerarReporte.Visible = false;
+            btnCancelar.Visible = false;
+            dgvFacturasEncontradas.Columns.Clear();
+            dgvFacturasEncontradas.Rows.Clear();
+        }
+
+        private void btnCancelar_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                texto.Clear();
+                titulo.Clear();
+                texto.Append("¿Estás seguro que deseas cancelar la generación del reporte?");
+                titulo.Append("Confirmar cancelación");
+
+                DialogResult resultado = MessageBox.Show(
+                    texto.ToString(),
+                    titulo.ToString(),
+                    MessageBoxButtons.YesNo,
+                    MessageBoxIcon.Warning
+                );
+
+                if (resultado == DialogResult.Yes)
+                {
+                    ResetearPanelGenerarReporte();
+                }
+            }
+            catch (Exception exc)
+            {
+                MessageBox.Show(exc.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            finally { }
         }
     }
 }

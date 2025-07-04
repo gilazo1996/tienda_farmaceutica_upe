@@ -1,4 +1,4 @@
-﻿using FarmaSalud.Gerente;
+﻿using FarmaSalud;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
