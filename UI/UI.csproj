@@ -73,6 +73,12 @@
     <Compile Include="Farmaceutico\FormFarmaceu.Designer.cs">
       <DependentUpon>FormFarmaceu.cs</DependentUpon>
     </Compile>
+    <Compile Include="Farmaceutico\FrmBuscarFarmaco.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Farmaceutico\FrmBuscarFarmaco.Designer.cs">
+      <DependentUpon>FrmBuscarFarmaco.cs</DependentUpon>
+    </Compile>
     <Compile Include="Vendedor\FormGenerarVenta.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -104,6 +110,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Farmaceutico\FormFarmaceu.resx">
       <DependentUpon>FormFarmaceu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Farmaceutico\FrmBuscarFarmaco.resx">
+      <DependentUpon>FrmBuscarFarmaco.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Vendedor\FormGenerarVenta.resx">
       <DependentUpon>FormGenerarVenta.cs</DependentUpon>

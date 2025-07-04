@@ -47,6 +47,53 @@ namespace DAL
                 };
             return farmaco;
         }
+
+        public bool EliminarFarmaco(string codigoInventario)
+        {
+            try
+            {
+                Conexion conexion = new Conexion();
+                
+                SqlParameter[] parametros = new SqlParameter[]
+                {
+                    conexion.crearParametro("@CodigoInventario", codigoInventario)
+                };
+
+                int filasAfectadas = conexion.EscribirPorStoreProcedure("sp_Eliminar_Farmaco", parametros);
+                
+                return filasAfectadas > 0;
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Error al eliminar fármaco en la DAL: " + ex.Message);
+            }
+        }
+
+        public bool ActualizarFarmaco(Farmaco farmaco)
+        {
+            try
+            {
+                Conexion conexion = new Conexion();
+                
+                SqlParameter[] parametros = new SqlParameter[]
+                {
+                    conexion.crearParametro("@CodigoInventario", farmaco.CodigoInventario),
+                    conexion.crearParametro("@NombreComercial", farmaco.NombreComercial),
+                    conexion.crearParametro("@PrecioUnidad", farmaco.PrecioUnidad),
+                    conexion.crearParametro("@Stock", farmaco.Stock),
+                    conexion.crearParametro("@FechaVencimiento", farmaco.FechaVencimiento),
+                    conexion.crearParametro("@RequiereReceta", farmaco.RequiereReceta)
+                };
+
+                int filasAfectadas = conexion.EscribirPorStoreProcedure("sp_Actualizar_Farmaco", parametros);
+                
+                return filasAfectadas > 0;
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Error al actualizar fármaco en la DAL: " + ex.Message);
+            }
+        }
     }
     
 }
