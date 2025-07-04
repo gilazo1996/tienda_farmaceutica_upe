@@ -7,6 +7,7 @@ using System.Configuration;
 using System.Data.SqlClient;
 using System.Data;
 using BE;
+using System.Runtime.Remoting.Messaging;
 
 namespace DAL
 {
@@ -14,32 +15,37 @@ namespace DAL
     {
         public Farmaco ObtenerFarmacoPorCodigo(string codigo)
         {
-            string connectionString = ConfigurationManager.ConnectionStrings["FarmaceuticaDB"].ConnectionString;
-            using (SqlConnection conn = new SqlConnection(connectionString))
-            {
-                conn.Open();
-                using (SqlCommand cmd = new SqlCommand("sp_ObtenerFarmacoPorCodigo", conn))
-                {
-                    cmd.CommandType = CommandType.StoredProcedure;
-                    cmd.Parameters.AddWithValue("@codigo_farmaco", codigo);
+            Conexion conexion = new Conexion();
+            BE.Farmaco farmaco = null;
+            DataRow row = null;
 
-                    using (SqlDataReader reader = cmd.ExecuteReader())
+            SqlParameter[] parametros = new SqlParameter[]
+            {
+                conexion.crearParametro("@CodigoInventario", codigo)
+            };
+
+            DataTable dt = conexion.LeerPorStoreProcedure("sp_Obtener_Farmaco_Por_Codigo", parametros);
+
+            if (dt.Rows.Count > 0)
+                row = dt.Rows[0];
+                farmaco = new Farmaco
+                {
+                    NombreComercial = row["NombreComercial"].ToString(),
+                    CodigoInventario = row["CodigoInventario"].ToString(),
+                    FechaVencimiento = Convert.ToDateTime(row["FechaVencimiento"]),
+                    PrecioUnidad = Convert.ToDouble(row["PrecioUnidad"]),
+                    RequiereReceta = Convert.ToBoolean(row["RequiereReceta"]),
+                    Stock = Convert.ToInt32(row["Stock"]),
+                    Proveedor = new Proveedor
                     {
-                        if (reader.Read())
-                        {
-                            return new Farmaco
-                            {
-                                Id = reader.GetInt32(0),
-                                NombreComercial = reader.GetString(1),
-                                CodigoFarmaco = reader.GetString(2),
-                                PrecioUnidad = reader.GetDecimal(3),
-                                Stock = reader.GetInt32(4)
-                            };
-                        }
+                        
+                        Nombre = row["NombreProveedor"].ToString(),
+                        NroTelefono = row["TelefonoProveedor"].ToString(),  // Cambié a NroTelefono
+                        Email = row["EmailProveedor"].ToString(),
+                        Cuit = row["CUITProveedor"].ToString()
                     }
-                }
-            }
-            return null;
+                };
+            return farmaco;
         }
     }
     
