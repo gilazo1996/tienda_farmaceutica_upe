@@ -20,7 +20,8 @@ namespace UI
         private void buscarPerfilToolStripMenuItem_Click(object sender, EventArgs e)
         {
             FrmBuscarFarmaco frmBuscarFarmaco = new FrmBuscarFarmaco();
-            frmBuscarFarmaco.ShowDialog();
+            this.Hide(); // Ocultar el formulario del farmacéutico
+            frmBuscarFarmaco.Show(); // Mostrar el formulario de búsqueda
         }
     }
 }

@@ -17,7 +17,6 @@ namespace DAL
         {
             Conexion conexion = new Conexion();
             BE.Farmaco farmaco = null;
-            DataRow row = null;
 
             SqlParameter[] parametros = new SqlParameter[]
             {
@@ -27,7 +26,8 @@ namespace DAL
             DataTable dt = conexion.LeerPorStoreProcedure("sp_Obtener_Farmaco_Por_Codigo", parametros);
 
             if (dt.Rows.Count > 0)
-                row = dt.Rows[0];
+            {
+                DataRow row = dt.Rows[0];
                 farmaco = new Farmaco
                 {
                     NombreComercial = row["NombreComercial"].ToString(),
@@ -38,13 +38,13 @@ namespace DAL
                     Stock = Convert.ToInt32(row["Stock"]),
                     Proveedor = new Proveedor
                     {
-                        
                         Nombre = row["NombreProveedor"].ToString(),
-                        NroTelefono = row["TelefonoProveedor"].ToString(),  // Cambié a NroTelefono
+                        NroTelefono = row["TelefonoProveedor"].ToString(),
                         Email = row["EmailProveedor"].ToString(),
                         Cuit = row["CUITProveedor"].ToString()
                     }
                 };
+            }
             return farmaco;
         }
 
@@ -59,9 +59,22 @@ namespace DAL
                     conexion.crearParametro("@CodigoInventario", codigoInventario)
                 };
 
-                int filasAfectadas = conexion.EscribirPorStoreProcedure("sp_Eliminar_Farmaco", parametros);
+                DataTable dt = conexion.LeerPorStoreProcedure("sp_Eliminar_Farmaco", parametros);
                 
-                return filasAfectadas > 0;
+                if (dt.Rows.Count > 0)
+                {
+                    int resultado = Convert.ToInt32(dt.Rows[0]["Resultado"]);
+                    string mensaje = dt.Rows[0]["Mensaje"].ToString();
+                    
+                    if (resultado == 0)
+                    {
+                        throw new Exception(mensaje);
+                    }
+                    
+                    return resultado == 1;
+                }
+                
+                return false;
             }
             catch (Exception ex)
             {

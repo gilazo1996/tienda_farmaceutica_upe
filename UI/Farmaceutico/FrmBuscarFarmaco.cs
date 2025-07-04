@@ -167,6 +167,26 @@ namespace UI
 
         private void btnSalir_Click(object sender, EventArgs e)
         {
+            // Buscar el formulario del farmacéutico en las ventanas abiertas
+            FormFarmaceu formFarmaceutico = null;
+            
+            foreach (Form form in Application.OpenForms)
+            {
+                if (form is FormFarmaceu)
+                {
+                    formFarmaceutico = (FormFarmaceu)form;
+                    break;
+                }
+            }
+            
+            // Si se encontró el formulario del farmacéutico, mostrarlo
+            if (formFarmaceutico != null)
+            {
+                formFarmaceutico.Show();
+                formFarmaceutico.WindowState = FormWindowState.Normal;
+                formFarmaceutico.BringToFront();
+            }
+            
             this.Close();
         }
 
