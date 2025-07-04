@@ -66,6 +66,7 @@ namespace BE
 
         public Farmaco()
         {
+			
 			this.Proveedor = new Proveedor();	
         }
     }
