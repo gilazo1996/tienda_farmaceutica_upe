@@ -73,6 +73,12 @@
     <Compile Include="Farmaceutico\FormFarmaceu.Designer.cs">
       <DependentUpon>FormFarmaceu.cs</DependentUpon>
     </Compile>
+    <Compile Include="Farmaceutico\FrmBuscarFarmaco.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Farmaceutico\FrmBuscarFarmaco.Designer.cs">
+      <DependentUpon>FrmBuscarFarmaco.cs</DependentUpon>
+    </Compile>
     <Compile Include="Vendedor\FormGenerarVenta.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -105,8 +111,12 @@
     <EmbeddedResource Include="Farmaceutico\FormFarmaceu.resx">
       <DependentUpon>FormFarmaceu.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Farmaceutico\FrmBuscarFarmaco.resx">
+      <DependentUpon>FrmBuscarFarmaco.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Vendedor\FormGenerarVenta.resx">
       <DependentUpon>FormGenerarVenta.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="Vendedor\FrmVendedor.resx">
       <DependentUpon>FrmVendedor.cs</DependentUpon>
@@ -147,6 +157,10 @@
     <ProjectReference Include="..\BLL\BLL.csproj">
       <Project>{5b10415c-24e1-48c4-a556-522a845dfa6a}</Project>
       <Name>BLL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DAL\DAL.csproj">
+      <Project>{9066ADCE-FB3E-4714-BD7D-49A2B87980C0}</Project>
+      <Name>DAL</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

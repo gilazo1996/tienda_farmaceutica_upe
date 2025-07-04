@@ -9,8 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using BLL;
 using BE;
-
-namespace FarmaSalud
+namespace UI
 {
     public partial class FormGenerarVenta : Form
     {
@@ -31,17 +30,12 @@ namespace FarmaSalud
             InitializeComponent();
             AgregarColumnaEliminar();
             dgvFarmacos.CellContentClick += dgvFarmacos_CellContentClick;
+            
+            // Hacer los campos del fármaco no editables
             txtCodigoProductoEncontrado.ReadOnly = true;
-            txtCodigoProductoEncontrado.BackColor = SystemColors.Control;
-
             txtNombreProductoEncontrado.ReadOnly = true;
-            txtNombreProductoEncontrado.BackColor = SystemColors.Control;
-
             txtPrecioProductoEncontrado.ReadOnly = true;
-            txtPrecioProductoEncontrado.BackColor = SystemColors.Control;
-
             txtStock.ReadOnly = true;
-            txtStock.BackColor = SystemColors.Control;
         }
         private void AgregarColumnaEliminar()
         {
@@ -73,7 +67,7 @@ namespace FarmaSalud
                 var result = MessageBox.Show("¿Eliminar fármaco?", "Confirmar", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                 if (result == DialogResult.Yes)
                 {
-                     //Elimina de la lista interna según el índice de la fila
+                    // Elimina de la lista interna según el índice de la fila
                     productosSeleccionados.RemoveAt(e.RowIndex);
                     ActualizarGrid();
                 }
@@ -123,15 +117,15 @@ namespace FarmaSalud
 
             productosSeleccionados.Add(new ProductoSeleccionado
             {
-                Codigo = productoActual.CodigoInventario,
+                Codigo = productoActual.CodigoFarmaco,
                 Nombre = productoActual.NombreComercial,
                 Cantidad = cantidad,
-                PrecioUnitario = (decimal)productoActual.PrecioUnidad
+                PrecioUnitario = productoActual.PrecioUnidad
             });
 
             ActualizarGrid();
 
-             //Limpia los campos para la próxima búsqueda
+            // Limpia los campos para la próxima búsqueda
             txtCodigoProductoEncontrado.Clear();
             txtNombreProductoEncontrado.Clear();
             txtPrecioProductoEncontrado.Clear();
@@ -149,7 +143,7 @@ namespace FarmaSalud
                 MessageBox.Show("Producto no encontrado.");
                 return;
             }
-            txtCodigoProductoEncontrado.Text = productoActual.CodigoInventario;
+            txtCodigoProductoEncontrado.Text = productoActual.CodigoFarmaco;
             txtNombreProductoEncontrado.Text = productoActual.NombreComercial;
             txtPrecioProductoEncontrado.Text = productoActual.PrecioUnidad.ToString("C");
             nudCantidadProductoEncontrado.Maximum = productoActual.Stock;
@@ -172,8 +166,10 @@ namespace FarmaSalud
                     return;
                 }
 
-                int idVendedor = 1;  
-                int? idCliente = null; 
+                // Aquí puedes pedir datos adicionales como id_vendedor, id_cliente, id_metodo_pago, etc.
+                // Para el ejemplo, usaremos valores fijos o null.
+                int idVendedor = 1; // Reemplaza por el id real del vendedor logueado
+                int? idCliente = null; // Si no hay cliente, puede ser null
                 int idMetodoPago = 1;
 
                 var productosDAL = productosSeleccionados
@@ -205,10 +201,12 @@ namespace FarmaSalud
                 MessageBox.Show("Ocurrió un error inesperado:\n" + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
-        
-        private void FormGenerarVenta_Load_1(object sender, EventArgs e)
-        {
 
+        private void btnCancelarVenta_Click(object sender, EventArgs e)
+        {
+            this.Close();
+            FormVendedor menuVendedor = new FormVendedor();
+            menuVendedor.Show();
         }
     }
 }

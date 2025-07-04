@@ -1,4 +1,4 @@
-﻿using FarmaSalud;
+using FarmaSalud;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -9,6 +9,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using UI;
 
 namespace FarmaSalud
 {
@@ -37,9 +38,9 @@ namespace FarmaSalud
                 }
                 else if (BEUsuario.Rol == BE.Usuario.RolUsuario.Farmaceutico)
                 {
-                    //FrmFarmaceutico frmFarmaceutico = new FrmFarmaceutico(BEUsuario);
-                    //frmFarmaceutico.Show();
-                    //this.Hide();
+                    FormFarmaceu frmFarmaceutico = new FormFarmaceu();
+                    frmFarmaceutico.Show();
+                    this.Hide();
                 }
                 else if(BEUsuario.Rol == BE.Usuario.RolUsuario.Gerente)
                 {

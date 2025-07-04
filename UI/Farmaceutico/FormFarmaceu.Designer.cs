@@ -87,6 +87,7 @@ namespace UI
             this.buscarPerfilToolStripMenuItem.Name = "buscarPerfilToolStripMenuItem";
             this.buscarPerfilToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.buscarPerfilToolStripMenuItem.Text = "Buscar farmaco";
+            this.buscarPerfilToolStripMenuItem.Click += new System.EventHandler(this.buscarPerfilToolStripMenuItem_Click);
             // 
             // perfilToolStripMenuItem
             // 
